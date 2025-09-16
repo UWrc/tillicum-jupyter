@@ -45,4 +45,5 @@ form:
   - bc_num_hours
   - module
   - custom_module
+  - jupyter_ui
   - extra_jupyter_args
