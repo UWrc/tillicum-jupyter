@@ -1,0 +1,48 @@
+---
+cluster: "tillicum"
+
+attributes:
+  num_gpus:
+    widget: "number_field"
+    label: "Number of GPUs"
+    required: true
+    min: 1
+    max: 8
+    step: 1
+    value: 1
+    display: true
+  bc_num_hours:
+    value: 1
+    display: true
+  module:
+    label: Jupyter Module
+    widget: select
+    help: Select 'Custom' if you have created your own Jupyter module.
+    options:
+    - [
+        "Latest",
+        "jupyter",
+        data-hide-custom-module: true
+      ]
+    - [ "Custom", "" ]
+    value: "Default"
+  custom_module:
+    label: Full path to your Jupyter module.
+    help: "e.g. /gpfs/groups/lab/user/my_jupyter_module"
+  jupyter_ui:
+    label: Jupyter User Interface
+    widget: "radio_button"
+    value: "lab"
+    options:
+    - ["Jupyter Lab", "lab" ]
+    - ["Jupyter Notebook", "notebook" ]
+  extra_jupyter_args: ""
+
+form:
+  - auto_accounts
+  - auto_qos
+  - num_gpus
+  - bc_num_hours
+  - module
+  - custom_module
+  - extra_jupyter_args
