@@ -1,7 +1,7 @@
 ---
-name: Jupyter Notebook
+name: Jupyter
 category: Interactive Apps
 subcategory: IDEs
 role: batch_connect
 description: |
-  This app will launch a Jupyter Notebook server on one or more nodes.
+  This app will launch a Jupyter server on one or more nodes.

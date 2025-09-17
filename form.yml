@@ -15,7 +15,6 @@ attributes:
     value: 1
     display: true
   module:
-    label: Jupyter module
     widget: "select"
     help: Select 'Custom' if you have created your own Jupyter module.
     options:
@@ -28,17 +27,26 @@ attributes:
     - [ "Custom", "custom" ]
     value: "Default"
   custom_module:
-    label: Jupyter module path
+    label: Module path
     widget: "text_field"
     help: Path to your Jupyter module, e.g. "/gpfs/projects/group/my_jupyter_module"
   jupyter_ui:
-    label: Jupyter User Interface
+    label: User Interface
     widget: "radio_button"
     value: "lab"
     options:
     - ["Jupyter Lab", "lab" ]
     - ["Jupyter Notebook", "notebook" ]
-  extra_jupyter_args: ""
+  enable_extra_args:
+    label: Modify command-line options?
+    widget: "check_box"
+    html_options:
+      data:
+        hide-extra-jupyter-args-when-unchecked: true
+  extra_jupyter_args:
+    label: Command-line options
+    widget: "text_field"
+    help: Additional arguments for Jupyter server, e.g. "jupyter lab --custom-option"
 
 form:
   - auto_accounts
@@ -48,4 +56,5 @@ form:
   - module
   - custom_module
   - jupyter_ui
+  - enable_extra_args
   - extra_jupyter_args
