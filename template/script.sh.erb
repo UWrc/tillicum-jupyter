@@ -7,7 +7,7 @@ echo "TIMING - Starting main script at: $(date)"
 cd "${HOME}"
 
 # Set variables from user form inputs
-jupyter_module="<%= context.module.blank? ? context.custom_module : context.module %>" # Jupyter module
+jupyter_module="<%= context.custom_module.blank? ? context.module : context.custom_module %>" # Jupyter module
 ui="<%= context.jupyter_ui %>" # lab or notebook
 extra_args="<%= context.extra_jupyter_args %>" # any extra args provided
 

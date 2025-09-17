@@ -15,20 +15,22 @@ attributes:
     value: 1
     display: true
   module:
-    label: Jupyter Module
-    widget: select
+    label: Jupyter module
+    widget: "select"
     help: Select 'Custom' if you have created your own Jupyter module.
     options:
     - [
         "Latest",
         "jupyter",
-        data-hide-custom-module: true
+        data-hide-custom-module: true,
+        data-set-custom-module: ""
       ]
-    - [ "Custom", "" ]
+    - [ "Custom", "custom" ]
     value: "Default"
   custom_module:
-    label: Full path to your Jupyter module.
-    help: "e.g. /gpfs/groups/lab/user/my_jupyter_module"
+    label: Jupyter module path
+    widget: "text_field"
+    help: Path to your Jupyter module, e.g. "/gpfs/projects/group/my_jupyter_module"
   jupyter_ui:
     label: Jupyter User Interface
     widget: "radio_button"
