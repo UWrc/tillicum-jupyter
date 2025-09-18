@@ -14,22 +14,6 @@ attributes:
   bc_num_hours:
     value: 1
     display: true
-  module:
-    widget: "select"
-    help: Select 'Custom' if you have created your own Jupyter module.
-    options:
-    - [
-        "Latest",
-        "jupyter",
-        data-hide-custom-module: true,
-        data-set-custom-module: ""
-      ]
-    - [ "Custom", "custom" ]
-    value: "Default"
-  custom_module:
-    label: Module path
-    widget: "text_field"
-    help: Path to your Jupyter module, e.g. "/gpfs/projects/group/my_jupyter_module"
   jupyter_ui:
     label: User Interface
     widget: "radio_button"
@@ -63,8 +47,6 @@ form:
   - auto_qos
   - num_gpus
   - bc_num_hours
-  - module
-  - custom_module
   - jupyter_ui
   - enable_jupyter_args
   - extra_jupyter_args
