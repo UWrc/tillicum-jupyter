@@ -3,3 +3,13 @@ script:
   native:
     - "--gpus"
     - "<%= num_gpus %>"
+    <%
+    unless extra_slurm_args.empty?
+      args = extra_slurm_args.split
+      args.each do |arg|
+    -%>
+    - "<%= arg %>"
+    <%-
+      end
+    end
+    -%>

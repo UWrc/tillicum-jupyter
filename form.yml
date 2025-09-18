@@ -37,16 +37,26 @@ attributes:
     options:
     - ["Jupyter Lab", "lab" ]
     - ["Jupyter Notebook", "notebook" ]
-  enable_extra_args:
-    label: Modify command-line options?
+  enable_jupyter_args:
+    label: Modify Jupyter command-line options?
     widget: "check_box"
     html_options:
       data:
         hide-extra-jupyter-args-when-unchecked: true
   extra_jupyter_args:
-    label: Command-line options
+    label: Jupyter command-line options
     widget: "text_field"
-    help: Additional arguments for Jupyter server, e.g. "jupyter lab --custom-option"
+    help: Additional arguments for Jupyter command, e.g. "jupyter lab --custom-options"
+  enable_slurm_args:
+    label: Modify Slurm command-line options?
+    widget: "check_box"
+    html_options:
+      data:
+        hide-extra-slurm-args-when-unchecked: true
+  extra_slurm_args:
+    label: Slurm command-line options
+    widget: "text_field"
+    help: Additional arguments for Slurm command, e.g. "sbatch --custom-options"
 
 form:
   - auto_accounts
@@ -56,5 +66,7 @@ form:
   - module
   - custom_module
   - jupyter_ui
-  - enable_extra_args
+  - enable_jupyter_args
   - extra_jupyter_args
+  - enable_slurm_args
+  - extra_slurm_args
